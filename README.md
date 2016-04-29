@@ -30,7 +30,7 @@ Some screencast demos are available:
 
 # How does it work?
 ## First, the Physical Machine
-The real machine comprises 3 rotating disks and 2 arms joined at one end to hold the pen and the other ends are connected to points on the smaller roating disks.  The 3rd dsik is much larger and carries the canvas on which the pen writes. The disks and arms are arragned so that the pen sits on the canvas.
+The real machine comprises 3 rotating disks and 2 arms joined at one end to hold the pen and the other ends are connected to points on the smaller roating disks.  The 3rd disk is much larger and carries the canvas on which the pen writes. The disks and arms are arragned so that the pen sits on the canvas.
 
 As the 3 disks turn, the pen moves on the canvas, leaving a curved track.
 
