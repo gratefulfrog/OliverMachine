@@ -1,0 +1,189 @@
+// MachineRunner01.pde
+
+final Config conf = new Config();
+
+boolean pause = false;
+
+// debugging params
+final boolean showArms     = true,
+              showBaseLine = false,
+              showPoints   = true,
+              overwrite    = true;
+
+//////////////////////////////////////////////
+/// no more user parameters beyond this point!
+//////////////////////////////////////////////
+
+// window size
+int mWidth = 4 * round(conf.D),
+    mHeight = round(2 * max(conf.Al,conf.Ar) + max(conf.Rl,conf.Rr));
+
+// coordinate system for computation
+float originX = 1.5*conf.D,   
+      originY = mHeight - 2*max(conf.Rl,conf.Rr);  
+
+// global variables used in computation
+Circle C0,C1,C2;      // big, right, left disks
+Point  p1, p2, p3;    // end point of right radius, left radius, and pen point
+
+// current time in ticks, note: time stops when simulation is paused!
+int i = 0;
+
+// points array list
+ArrayList<Point> points;
+   
+void settings() {
+  size(mWidth,mHeight);
+}
+
+void setup() {
+  frameRate(conf.FR);  // nb steps per second
+  background(conf.bg); 
+  stroke(0);  // black lines
+  // init globals, points are just placeholders
+  p1 = new Point(0,0);
+  p2 = new Point(0,0);
+  p3 = new Point(0,0);
+  C2 =  new Circle(originX , originY,conf.Rl);
+  C1 = new Circle(originX+conf.D, originY,conf.Rr);
+  C0 = new Circle(C2.x+conf.D/2.0,C1.y -conf.D/2.0, conf.Ra);
+  points =  new ArrayList<Point>(); 
+  drawDisks();
+}
+
+void drawDisks(){
+  // draw the 3 disks
+  stroke(conf.smallArmColor);
+  float r = 2*conf.Rl;
+  ellipse(C2.x,C2.y,r,r);
+  r = 2*conf.Rr;
+  ellipse(C1.x,C1.y,r,r);
+  r = 2*conf.Ra;
+  ellipse(C0.x,C0.y,r,r);   
+}
+
+void updateRadiusArmPoints(int t){
+  // move the point at the end of each small arm to the new position as a result
+  // of the rotation of the appropriate small wheel
+  p2.x = conf.Rl * cos(radians(t*conf.Vl)) + C2.x;
+  p2.y = C2.y - conf.Rl * sin(radians(t*conf.Vl));
+  p1.x = conf.Rr * cos(radians(t*conf.Vr)) + C1.x;
+  p1.y = C1.y - conf.Rr * sin(radians(t*conf.Vr));
+}
+
+void drawRl(){
+  // draw left small arm
+  stroke(conf.smallArmColor);
+  line (C2.x,C2.y,p2.x,p2.y);
+}
+
+void drawRr(){
+   // draw right small arm
+   stroke(conf.smallArmColor);
+   line (C1.x,C1.y,p1.x,p1.y);
+}
+
+void drawBaseLine(){
+  // draw the line between the 2 radius arms
+  stroke(conf.baseLineColor);
+  line(p2.x,p2.y,p1.x,p1.y);
+}
+
+void updatePenPoint(){
+  // get a the new point where the pen is located
+  p3 = getIntersectPoint(p2, p1, conf.Al, conf.Ar);
+}
+
+void drawPenPoints(){
+  // this takes the array of all points previously drawn,
+  // rotates them by the angle corresponding to the big disk speed
+  // and draws lines from p[i] to p[i+1],
+  // this uses the matrix transformations offered in processing
+  
+  // first set the color
+  stroke(conf.penColor);
+  fill(conf.penColor);
+  
+  // save the current coordinate system to the matrix stack
+  pushMatrix();
+  // translate the coordinate system to the center of the big disk
+  translate(C0.x,C0.y);
+  // if there are any points already saved
+  if (points.size()>0){
+    // get the first point
+    Point p = points.get(0);
+    // rotate it
+    p.rotate(radians(conf.Va));
+    // iterate over all the remaining points
+    for (int i = 1; i < points.size(); i++) { 
+      // get the point, rotate it, draw a line from the previous point to this one,
+      // set this point to the previous point for the next iteration
+      Point pp = points.get(i);
+      pp.rotate(radians(conf.Va));
+      p.lineTo(pp);
+      p = pp;
+    }
+  }
+  // go back to the original coordinate system
+  popMatrix();
+  // display the current pen point
+  p3.display();
+  
+  // create a new point by translating the pen point to coordinate systems centered at the center of the big disk
+  // and add it to the array of points
+  points.add(p3.NewPointAtNewOrigin(C0));
+  
+  // turn off fill, to clean up!
+  noFill();
+}
+
+void drawLeftArm(){
+    stroke(conf.longArmColor);
+  line(p2.x,p2.y,p3.x,p3.y);
+}
+
+void drawRightArm(){
+  stroke(conf.longArmColor);
+  line(p3.x,p3.y,p1.x,p1.y);
+}
+
+void draw() {
+  if (pause){
+    // if simulation is paused, do nothing
+    return;
+  }
+  if (overwrite){
+    // if we are overwriting, refesh display
+    background(conf.bg);
+    drawDisks();
+  }
+  // step the arms, and update the pen point
+  updateRadiusArmPoints(i);
+  updatePenPoint();
+
+  if (showArms){
+    // if showing arms, draw them
+    drawRl();
+    drawRr();
+    drawLeftArm();
+    drawRightArm();
+  }
+  if (showBaseLine){
+    // if showing the baseline, draw it
+    drawBaseLine();
+  }
+  if (showPoints){
+    // if showing the points
+    drawPenPoints();
+  }
+  // increment the step counter
+  i++;
+}
+
+void mouseClicked() {
+  pause = ! pause;
+}
+void keyPressed() {
+pause = ! pause;
+}
+  
