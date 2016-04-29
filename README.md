@@ -45,9 +45,9 @@ It is straightforward to compute coordinates of the center of each of the inters
 
 By making the simulation take short steps, we can approximate continuous drawing by making a line from the current point to the previous one.
 
-However, the canvas is rotating about its center as well. That means that each point will roate about the canvas disk center. So, as this roatation takes place, the program has to compute the complex trajectory of each previously drawn point. This would be a nightmare, if we didn't use a "tick". 
+However, the canvas is rotating about its center as well. That means that each point will roate about the canvas disk center. So, as this roatation takes place, the program has to compute the complex trajectory of each previously drawn point. This would be a nightmare, if we didn't use a *trick*. 
 
-Our programming environment provides a Cartesion coordinate system for all our drawing. The origin of this coordinate system is the upper left corner of the window, with positve Y downwards and positive X to the right.
+Our programming environment provides a Cartesian coordinate system for all our drawing. The origin of this coordinate system is the upper left corner of the window, with positve Y downwards and positive X to the right.
 
 Our trick will be to create another coordinate system with the origin at the center of the canvas disk. Now, in this coordinate system the computation of a point's trajectory is straightforward. Also, the conversion between the 2 coordinate systems is straightforward as well.
 
