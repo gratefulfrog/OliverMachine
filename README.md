@@ -19,7 +19,7 @@ Simulation parameters that can be set by the user are:
 * pen color
 * simulation speed
 
-These are all set in the "Config" tab of the IDE.
+These are all set in the **Config**¨ tab of the IDE.
 
 There should be no need to make changes in any other tab.
 
