@@ -11,7 +11,7 @@ class App{
     boolean pauseApp = false;
     // coordinate system for computation
     float originX,
-	originY;
+   	originY;
 
     // global variables used in computation
     Circle C0,C1,C2;      // big, right, left disks
@@ -24,9 +24,9 @@ class App{
     ArrayList<Point> points;
     
     App(Config c, int winHeight){
-	conf = c;
-	originX = 1.5*conf.D; 
-	originY = winHeight - 2*max(conf.Rl,conf.Rr);  
+    conf = c;
+    originX = width/2.0 -conf.D/2.0; // 1.5*conf.D; 
+    originY = winHeight - conf.winSpace- max(conf.Rl,conf.Rr);  
 	// init globals, points are just placeholders
 	p1 = new Point(0,0);
 	p2 = new Point(0,0);

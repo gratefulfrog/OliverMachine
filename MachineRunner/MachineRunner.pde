@@ -3,9 +3,9 @@
 final Config conf = new Config();
 
 // window size
-int mWidth = 4 * round(conf.D),
-    mHeight = round(2 * max(conf.Al,conf.Ar) + max(conf.Rl,conf.Rr));
-
+int mWidth  = round(conf.D + conf.Rl + conf.Rr + 2*conf.winSpace),
+    mHeight = round(2*conf.winSpace + max(conf.Rl,conf.Rr) + 2*conf.Ra); 
+    
 void settings() {
   size(mWidth,mHeight);
 }

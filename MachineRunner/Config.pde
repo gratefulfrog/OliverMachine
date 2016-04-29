@@ -2,22 +2,22 @@
 
 // Small disk sizes
 final float LeftRadius = 50;  // radius of left short arm in pixels
-final float RightRadius = 40;  // radius of left short arm in pixels
+final float RightRadius = 60;  // radius of left short arm in pixels
 
 // distance between the small disks (center to center) in pixels
-final float SmallDiskDistance = 200;
+final float SmallDiskDistance = 275;
 
 // big wheel size
-final float BigRadius = 80;  // radius of the wheel that is the canvas
+final float BigRadius = 120;  // radius of the wheel that is the canvas
 
 // wheel speeds
 final float LeftSpeed  = 1;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
 final float RightSpeed = 2;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
-final float BigSpeed   = 0.1; // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
+final float BigSpeed   = 1.05; // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
 
 // pen holder arm lengths
-final float LeftArmlength = 157;  // length of arm in pixels
-final float RightArmlength = 165;  // length of arm in pixels
+final float LeftArmlength = 215;  // length of arm in pixels
+final float RightArmlength = 170;  // length of arm in pixels
 
 // pen color
 final color PenColor = #F50C2F;  // RGB value of the pen color
@@ -57,6 +57,8 @@ class Config {
           longArmColor = #DDD0E8,
           baseLineColor = #D7EADD,
           bg = #0F0606;
+     // window spacing
+     float winSpace = 100;
 
     Config(){};
 }
