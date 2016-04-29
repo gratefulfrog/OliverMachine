@@ -34,6 +34,8 @@ As the 3 disks turn, the pen moves on the canvas, leaving a curved track.
 ## Now the softawre
 Conceptually, the 2 pen arms are radii of circles which intersect at the pen. The center of each of these circles is the other end point of the pen arm. Thus, the center of each circle rotates around one of the small disks.
 
+An illustration is provided in this [diagram](https://github.com/gratefulfrog/OliverMachine/blob/master/Diagram01.png).
+
 It is straightforward to compute coordinates of the center of each of the intersecting circles based on the rotation speed of the disks. Once the center points are known, it is again straightforward to compute the intersection point.
 
 By making the simulation take short steps, we can approximate continuous drawing by making a line from the current point to the previous one.
