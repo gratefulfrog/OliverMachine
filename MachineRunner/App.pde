@@ -23,7 +23,7 @@ class App{
     // points array list
     ArrayList<Point> points;
     
-    App(Config c, int winWidth, int winHeight){
+    App(Config c, int winHeight){
 	conf = c;
 	originX = 1.5*conf.D; 
 	originY = winHeight - 2*max(conf.Rl,conf.Rr);  
@@ -78,7 +78,10 @@ class App{
 
     void updatePenPoint(){
 	// get a the new point where the pen is located
-	p3 = getIntersectPoint(p2, p1, conf.Al, conf.Ar);
+	//p3 = getIntersectPoint(p2, p1, conf.Al, conf.Ar);
+	Circle c1 = new Circle(p2,conf.Al);
+	Circle c2 = new Circle(p1, conf.Ar);
+	p3 = c1.getIntersectPoint(c2);
     }
     
     void drawPenPoints(){

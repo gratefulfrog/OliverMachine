@@ -2,8 +2,6 @@
 
 final Config conf = new Config();
 
-boolean pause = false;
-
 // window size
 int mWidth = 4 * round(conf.D),
     mHeight = round(2 * max(conf.Al,conf.Ar) + max(conf.Rl,conf.Rr));
@@ -18,7 +16,7 @@ void setup() {
   frameRate(conf.FR);  // nb steps per second
   background(conf.bg); 
   stroke(0);  // black lines
-  app =  new App(conf,mWidth,mHeight);
+  app =  new App(conf,mHeight);
 }
 
 void draw() {
