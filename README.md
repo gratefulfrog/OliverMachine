@@ -23,7 +23,9 @@ These are all set in the "Config" tab of the IDE.
 
 There should be no need to make changes in any other tab.
 
-A [screencast](https://youtu.be/259S3xKFLBM) demo is available.
+Some screencast demos are available:
+* [demo1](https://youtu.be/259S3xKFLBM)
+* [demo2](https://youtu.be/vEwtugnfQ10)
 
 # How does it work?
 ## First, the Physical Machine
