@@ -34,6 +34,8 @@ The real machine comprises 3 rotating disks and 2 arms joined at one end to hold
 
 As the 3 disks turn, the pen moves on the canvas, leaving a curved track.
 
+Changing the disk rotation speeds, and/or the small disk radii and/or the arm lengths will change the pattern produced.
+
 ## Now the softawre
 Conceptually, the 2 pen arms are radii of circles which intersect at the pen. The center of each of these circles is the other end point of the pen arm. Thus, the center of each circle rotates around one of the small disks.
 
