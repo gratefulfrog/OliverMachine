@@ -7,10 +7,10 @@ float DD(Circle c1, Circle c2){
   // raise an exception if there is no intersection!
   float res = sqrt(sq(c2.x-c1.x) + sq(c2.y - c1.y));
   if (res > (c1.r + c2.r)){
-    throw new RuntimeException("Circles do not intersect!");
+    throw new RuntimeException("Arms have been torn apart!"); //Circles do not intersect!
   }
   else if (res < abs(c1.r -c2.r)){
-    throw new RuntimeException("One circle is inside the other!");
+    throw new RuntimeException("Arms cannot connect to the pen!"); //One circle is inside the other!
   }
   return res;
 }
