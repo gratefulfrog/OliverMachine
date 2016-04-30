@@ -2,11 +2,11 @@
 
 // Small disk sizes
 final float LeftRadius = 60;  // radius of left short arm in pixels
-final float RightRadius = 50;  // radius of left short arm in pixels
+final float RightRadius = 60;  // radius of left short arm in pixels
 
 // Radial Arm starting postion, in degrees, 0 degrees is due East, positive is clockwise
 final float InitRight = 90, // right arm init
-            InitLeft = -31;  // left arm init
+            InitLeft = 0;  // left arm init
 
 // distance between the small disks (center to center) in pixels
 final float SmallDiskDistance = 230;
@@ -20,7 +20,7 @@ final float RightSpeed = 2;   // Wheel rotational speeds in Degrees per frame (f
 final float BigSpeed   = 0.3; // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
 
 // pen holder arm lengths
-final float LeftArmlength = 185;  // length of arm in pixels
+final float LeftArmlength = 195;  // length of arm in pixels
 final float RightArmlength = 175;  // length of arm in pixels
 
 // pen color
@@ -31,7 +31,7 @@ final float SimSpeed = 100;  // simulation speed in Frames Per Second, Note: the
 
 // image directory, where the saved images will go! Don't forget the slash at the end!
 final String imageDir = "/home/bob/MiscProjects/OliverMachine/Images/";
-final boolean saveImages = false;  // set to true to durn on image saving
+final boolean saveImages = true; // false;  // set to true to durn on image saving
 
 ////////////////////////////
 // end of User Config Data

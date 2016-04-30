@@ -185,6 +185,7 @@ class App{
                         String.valueOf(second()) + ".png";
       
       save(fileName);
+      println(fileName +" saved!");
     }
   }
 }
