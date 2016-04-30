@@ -15,7 +15,7 @@ App app;
 void setup() {
   frameRate(conf.FR);  // nb steps per second
   background(conf.bg); 
-  stroke(0);  // black lines
+  stroke(0);  // black lines by default at first...
   app =  new App(conf,mHeight);
 }
 

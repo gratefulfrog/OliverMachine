@@ -52,10 +52,10 @@ class App{
     void updateRadiusArmPoints(int t){
       //move the point at the end of each small arm to the new position as a result
       // of the rotation of the appropriate small wheel
-      p2.x = conf.Rl * cos(radians(t*conf.Vl + conf.Ir)) + C2.x;
-      p2.y = C2.y - conf.Rl * sin(radians(t*conf.Vl + conf.Ir));
-      p1.x = conf.Rr * cos(radians(t*conf.Vr + conf.Il)) + C1.x;
-      p1.y = C1.y - conf.Rr * sin(radians(t*conf.Vr + conf.Il));
+      p2.x = conf.Rl * cos(radians(t*conf.Vl + conf.Il)) + C2.x;
+      p2.y = C2.y - conf.Rl * sin(radians(t*conf.Vl + conf.Il));
+      p1.x = conf.Rr * cos(radians(t*conf.Vr + conf.Ir)) + C1.x;
+      p1.y = C1.y - conf.Rr * sin(radians(t*conf.Vr + conf.Ir));
     }
     
     void drawRl(){
@@ -170,8 +170,22 @@ class App{
 	i++;
     }
 
-    void pause() {
-	pauseApp = ! pauseApp;
+  void pause() {
+    // pause or unpause the simulation;
+    // if we pause, we save an image file of the current state
+    pauseApp = ! pauseApp;
+    if (conf.saveIms && pauseApp){
+      String fileName = conf.imDir + 
+                        "image-" + 
+                        String.valueOf(year()) + "-" +
+                        String.valueOf(month()) + "-" +
+                        String.valueOf(day()) + "-" +
+                        String.valueOf(hour()) + "-" +
+                        String.valueOf(minute()) + "-" +
+                        String.valueOf(second()) + ".png";
+      
+      save(fileName);
     }
+  }
 }
   

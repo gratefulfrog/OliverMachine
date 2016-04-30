@@ -2,25 +2,25 @@
 
 // Small disk sizes
 final float LeftRadius = 60;  // radius of left short arm in pixels
-final float RightRadius = 60;  // radius of left short arm in pixels
+final float RightRadius = 50;  // radius of left short arm in pixels
 
 // Radial Arm starting postion, in degrees, 0 degrees is due East, positive is clockwise
-final float InitRight = 270, // right arm init
-            InitLeft = 180;  // left arm init
+final float InitRight = 90, // right arm init
+            InitLeft = -31;  // left arm init
 
 // distance between the small disks (center to center) in pixels
-final float SmallDiskDistance = 225;
+final float SmallDiskDistance = 230;
 
 // big wheel size
 final float BigRadius = 80;  // radius of the wheel that is the canvas
 
 // wheel speeds
-final float LeftSpeed  = 2.1;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
-final float RightSpeed = 0.7;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
-final float BigSpeed   = 1; // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
+final float LeftSpeed  = 1;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
+final float RightSpeed = 2;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
+final float BigSpeed   = 0.3; // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
 
 // pen holder arm lengths
-final float LeftArmlength = 175;  // length of arm in pixels
+final float LeftArmlength = 185;  // length of arm in pixels
 final float RightArmlength = 175;  // length of arm in pixels
 
 // pen color
@@ -28,6 +28,10 @@ final color PenColor = #F50C2F;  // RGB value of the pen color
 
 // simulation speed
 final float SimSpeed = 100;  // simulation speed in Frames Per Second, Note: the software will do its best to get that speed, but may fail!
+
+// image directory, where the saved images will go! Don't forget the slash at the end!
+final String imageDir = "/home/bob/MiscProjects/OliverMachine/Images/";
+final boolean saveImages = false;  // set to true to durn on image saving
 
 ////////////////////////////
 // end of User Config Data
@@ -67,6 +71,9 @@ class Config {
           bg = #0F0606;
      // window spacing
      float winSpace = 100;
-
+    // image dir
+    String imDir = imageDir; 
+    boolean saveIms = saveImages;
+    
     Config(){};
 }
