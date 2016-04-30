@@ -8,7 +8,7 @@ To run it, load it into Processing 3, then click the "play" arrow in the Process
 
 A window will appear with the simulation running.
 
-A key stroke or mouse click will pause/restart the simulation.
+A key stroke or mouse click will pause/restart the simulation. If image saving is enabled, a copy of the current display will be saved as a **png** file
 
 Simulation parameters that can be set by the user are:
 * Small disk sizes
@@ -19,6 +19,8 @@ Simulation parameters that can be set by the user are:
 * pen holder arm lengths
 * pen color
 * simulation speed
+* directory in which to save image
+* enable/disable image saving on pause
 
 These are all set in the **Config**¨ tab of the IDE.
 
