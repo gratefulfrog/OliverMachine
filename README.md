@@ -12,6 +12,7 @@ A key stroke or mouse click will pause/restart the simulation.
 
 Simulation parameters that can be set by the user are:
 * Small disk sizes
+* Initial position of radius arms (point on small disk connected to pen arm)
 * distance between the small disks (center to center)
 * big wheel size
 * wheel speeds
