@@ -1,23 +1,27 @@
 // All user config data goes here!
 
 // Small disk sizes
-final float LeftRadius = 50;  // radius of left short arm in pixels
+final float LeftRadius = 60;  // radius of left short arm in pixels
 final float RightRadius = 60;  // radius of left short arm in pixels
 
+// Radial Arm starting postion, in degrees, 0 degrees is due East
+final float InitRight = 270, // right arm init
+            InitLeft = 180;  // left arm init
+
 // distance between the small disks (center to center) in pixels
-final float SmallDiskDistance = 275;
+final float SmallDiskDistance = 225;
 
 // big wheel size
-final float BigRadius = 120;  // radius of the wheel that is the canvas
+final float BigRadius = 80;  // radius of the wheel that is the canvas
 
 // wheel speeds
-final float LeftSpeed  = 1;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
-final float RightSpeed = 2;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
-final float BigSpeed   = 1.05; // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
+final float LeftSpeed  = 2.1;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
+final float RightSpeed = 0.7;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
+final float BigSpeed   = 1; // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
 
 // pen holder arm lengths
-final float LeftArmlength = 215;  // length of arm in pixels
-final float RightArmlength = 170;  // length of arm in pixels
+final float LeftArmlength = 175;  // length of arm in pixels
+final float RightArmlength = 175;  // length of arm in pixels
 
 // pen color
 final color PenColor = #F50C2F;  // RGB value of the pen color
@@ -39,6 +43,10 @@ class Config {
     // Radii of small wheels
     float Rl = LeftRadius, // left wheel radius
           Rr = RightRadius; // right wheel radius
+          
+    // initial position of radius arms in degrees, 0 is due East
+    float Ir = InitRight, // right arm init
+          Il = InitLeft;  // left arm init
     
     // Radius of Big Wheel
     float Ra = BigRadius;

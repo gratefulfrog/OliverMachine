@@ -50,12 +50,12 @@ class App{
     }
 
     void updateRadiusArmPoints(int t){
-	// move the point at the end of each small arm to the new position as a result
-	// of the rotation of the appropriate small wheel
-	p2.x = conf.Rl * cos(radians(t*conf.Vl)) + C2.x;
-	p2.y = C2.y - conf.Rl * sin(radians(t*conf.Vl));
-	p1.x = conf.Rr * cos(radians(t*conf.Vr)) + C1.x;
-	p1.y = C1.y - conf.Rr * sin(radians(t*conf.Vr));
+      //move the point at the end of each small arm to the new position as a result
+      // of the rotation of the appropriate small wheel
+      p2.x = conf.Rl * cos(radians(t*conf.Vl + conf.Ir)) + C2.x;
+      p2.y = C2.y - conf.Rl * sin(radians(t*conf.Vl + conf.Ir));
+      p1.x = conf.Rr * cos(radians(t*conf.Vr + conf.Il)) + C1.x;
+      p1.y = C1.y - conf.Rr * sin(radians(t*conf.Vr + conf.Il));
     }
     
     void drawRl(){
