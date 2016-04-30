@@ -4,7 +4,7 @@
 final float LeftRadius = 60;  // radius of left short arm in pixels
 final float RightRadius = 60;  // radius of left short arm in pixels
 
-// Radial Arm starting postion, in degrees, 0 degrees is due East
+// Radial Arm starting postion, in degrees, 0 degrees is due East, positive is clockwise
 final float InitRight = 270, // right arm init
             InitLeft = 180;  // left arm init
 
