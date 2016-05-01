@@ -4,7 +4,9 @@ Simulation Software For Oliver's Machine
 # Overview
 This [Processing ](https://processing.org) application simulates Oliver's machine.
 
-To run it, load it into Processing 3, then click the "play" arrow in the Processing IDE.
+**NEW** :  A [web version ](https://gratefulfrog.github.io/OliverMachineWeb/hello-oliver-machine.html)is now available so you can run it in your browser. Thank you, [processing.js](https://gratefulfrog.github.io/OliverMachineWeb/hello-oliver-machine.html).
+
+To run the stand alone version, load it into the Processing 3 IDE, then click the "play" arrow under Processing's main menu.
 
 A window will appear with the simulation running.
 
@@ -12,7 +14,7 @@ A key stroke or mouse click will pause/restart the simulation. If image saving i
 
 Simulation parameters that can be set by the user are:
 * Small disk sizes
-* Initial position of radius arms (point on small disk connected to pen arm)
+* Initial position of radius arms (point on small disk connected to pen arm - positve is counter-clockwise)
 * distance between the small disks (center to center)
 * big wheel size
 * wheel speeds
