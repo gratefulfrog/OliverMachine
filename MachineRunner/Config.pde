@@ -16,11 +16,11 @@ final float BigRadius = 150;  // radius of the wheel that is the canvas
 
 // wheel speeds
 final float LeftSpeed  = 1;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
-final float RightSpeed = 2;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
+final float RightSpeed = 7;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
 final float BigSpeed   = 1.3; // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
 
 // pen holder arm lengths
-final float LeftArmlength = 270;  // length of arm in pixels
+final float LeftArmlength = 160;  // length of arm in pixels
 final float RightArmlength = 295;  // length of arm in pixels
 
 // pen color
