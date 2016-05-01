@@ -4,24 +4,24 @@
 final float LeftRadius = 60;  // radius of left short arm in pixels
 final float RightRadius = 60;  // radius of left short arm in pixels
 
-// Radial Arm starting postion, in degrees, 0 degrees is due East, positive is clockwise
+// Radial Arm starting postion, in degrees, 0 degrees is due East, positive is counter clockwise
 final float InitRight = 90, // right arm init
-            InitLeft = 0;  // left arm init
+            InitLeft = -90;  // left arm init
 
 // distance between the small disks (center to center) in pixels
-final float SmallDiskDistance = 230;
+final float SmallDiskDistance = 340;
 
 // big wheel size
-final float BigRadius = 80;  // radius of the wheel that is the canvas
+final float BigRadius = 150;  // radius of the wheel that is the canvas
 
 // wheel speeds
 final float LeftSpeed  = 1;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
 final float RightSpeed = 2;   // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
-final float BigSpeed   = 0.3; // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
+final float BigSpeed   = 1.3; // Wheel rotational speeds in Degrees per frame (frameRate is set elsewhere to get a nice result!)
 
 // pen holder arm lengths
-final float LeftArmlength = 195;  // length of arm in pixels
-final float RightArmlength = 175;  // length of arm in pixels
+final float LeftArmlength = 270;  // length of arm in pixels
+final float RightArmlength = 295;  // length of arm in pixels
 
 // pen color
 final color PenColor = #F50C2F;  // RGB value of the pen color
