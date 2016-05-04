@@ -32,7 +32,7 @@ class Config {
     
     // image directory, where the saved images will go! Don't forget the slash at the end!
     String imageDir = "/home/bob/MiscProjects/OliverMachine/MachineRunner/Images/";
-    boolean saveImages = true; // false;  // set to true to durn on image saving
+    boolean saveImages = false; // true;  // set to true to durn on image saving
     
 ////////////////////////////
 // end of User Config Data
